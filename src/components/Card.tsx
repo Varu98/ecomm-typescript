@@ -32,10 +32,10 @@ const Card = ({ product }: Props) => {
         >
           {name}
         </Text>
-        <Text fontSize={{ base: "sm", lg: "lg" }}>{description}</Text>
-        <Flex w={"full"} justifyContent={"end"} gap={"1rem"}>
+        <Flex w={"full"} justifyContent={"start"} gap={"1rem"}>
           <Rating rating={rating} />
         </Flex>
+        <Text fontSize={{ base: "sm", lg: "lg" }}>{description}</Text>
         <Flex
           flexDirection={"row"}
           gap={{ base: "1rem" }}
