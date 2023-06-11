@@ -19,7 +19,7 @@ const Card = ({ product }: Props) => {
     product;
 
   return (
-    <GridItem w={"full"} key={id}>
+    <GridItem data-testid={"product-card"} w={"full"} key={id}>
       <VStack rounded={"sm"} p={4} gap={"1rem"}>
         <Box>
           <Image rounded={"md"} w={"100%"} src={image} />
@@ -32,10 +32,10 @@ const Card = ({ product }: Props) => {
         >
           {name}
         </Text>
-        <Text fontSize={{ base: "sm", lg: "lg" }}>{description}</Text>
-        <Flex w={"full"} justifyContent={"end"} gap={"1rem"}>
+        <Flex w={"full"} justifyContent={"start"} gap={"1rem"}>
           <Rating rating={rating} />
         </Flex>
+        <Text fontSize={{ base: "sm", lg: "lg" }}>{description}</Text>
         <Flex
           flexDirection={"row"}
           gap={{ base: "1rem" }}

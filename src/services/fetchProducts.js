@@ -2,7 +2,6 @@ import { BaseUrl } from "../constants/urls";
 
 export const fetchProducts = async (
   limit,
-  index,
   setLoading,
   setProducts,
   paginate,
@@ -14,12 +13,11 @@ export const fetchProducts = async (
     );
     const data = await response.json();
     if (data) {
-      console.log(data);
       setLoading(false);
       setProducts(data.data);
       setPaginate((prev) => ({ ...prev, pageCount: data.pageCount }));
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
