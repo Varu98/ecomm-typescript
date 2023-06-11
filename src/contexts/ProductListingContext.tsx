@@ -11,19 +11,17 @@ const limit = 10;
 const ProductsContext = createContext<ProductContextProps>({
   products: [],
   loading: true,
-  index: 1,
   paginate: {
     page: 1,
     count: limit,
     pageCount: 10,
   },
-  setIndex: () => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setPaginate: () => {},
 });
 
 const ProductsProvider = ({ children }: ProductProviderProps) => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [index, setIndex] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
   const [paginate, setPaginate] = useState<Paginate>({
     page: 1,
@@ -32,12 +30,12 @@ const ProductsProvider = ({ children }: ProductProviderProps) => {
   });
 
   useEffect(() => {
-    fetchProducts(limit, index, setLoading, setProducts, paginate, setPaginate);
+    setLoading(true);
+    fetchProducts(limit, setLoading, setProducts, paginate, setPaginate);
   }, [paginate.page]);
-  console.log(products);
   return (
     <ProductsContext.Provider
-      value={{ products, loading, index, setIndex, paginate, setPaginate }}
+      value={{ products, loading, paginate, setPaginate }}
     >
       {children}
     </ProductsContext.Provider>

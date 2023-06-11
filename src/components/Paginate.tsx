@@ -2,9 +2,8 @@ import { Flex, Button, ButtonGroup } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useProducts } from "../contexts/ProductListingContext";
-import { PaginateProps } from "../types/interfaces";
 
-const Paginate = ({ setIndex }: PaginateProps) => {
+const Paginate = () => {
   const { paginate, setPaginate } = useProducts();
   const { pageCount } = paginate;
   const [paginateIndices, setPageIndices] = useState<number[]>([]);
@@ -12,7 +11,7 @@ const Paginate = ({ setIndex }: PaginateProps) => {
   const [next, setNext] = useState(5);
 
   useEffect(() => {
-    let paginationArr = Array.from(
+    const paginationArr = Array.from(
       { length: pageCount },
       (_, i) => i + 1
     ).slice(prev, next);
@@ -37,7 +36,7 @@ const Paginate = ({ setIndex }: PaginateProps) => {
   return (
     <Flex maxW={"20rem"} mx={"auto"} p={4} justifyContent={"space-around"}>
       {prev !== 0 && (
-        <Button onClick={paginateLeft}>
+        <Button data-testid={"Prev"} onClick={paginateLeft}>
           <BsChevronLeft />
         </Button>
       )}
@@ -45,6 +44,8 @@ const Paginate = ({ setIndex }: PaginateProps) => {
       <ButtonGroup mx={"0.5rem"}>
         {paginateIndices.map((num: number) => (
           <Button
+            data-testid={"page-" + num}
+            key={num}
             bgColor={paginate.page === num ? "blue.500" : ""}
             color={paginate.page === num ? "white" : ""}
             onClick={() => onClickHandler(num)}
@@ -53,7 +54,7 @@ const Paginate = ({ setIndex }: PaginateProps) => {
           </Button>
         ))}
       </ButtonGroup>
-      <Button onClick={paginateRight}>
+      <Button data-testid={"Next"} onClick={paginateRight}>
         <BsChevronRight />
       </Button>
     </Flex>

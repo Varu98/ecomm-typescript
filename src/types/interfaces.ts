@@ -29,9 +29,7 @@ export interface Paginate {
 export interface ProductContextProps {
   products: Product[];
   loading: boolean;
-  index: number;
   paginate: Paginate;
-  setIndex: Dispatch<SetStateAction<number>>;
   setPaginate: Dispatch<SetStateAction<Paginate>>;
 }
 

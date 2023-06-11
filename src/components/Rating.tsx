@@ -19,7 +19,7 @@ const Rating: React.FC<StarProps> = ({ rating }) => {
       stars.push(<BsStarFill />);
     }
     if (decimalPart >= 0.5) stars.push(<BsStarHalf />);
-    setStars(stars);  
+    setStars(stars);
     for (let i = fullStars; decimalPart >= 0.5 ? i < 4 : i < 5; i++) {
       greyStars.push(<BsStarFill />);
     }
@@ -42,11 +42,6 @@ const Rating: React.FC<StarProps> = ({ rating }) => {
           <span key={index}>{star}</span>
         ))}
       </Flex>
-      {/* <Flex>
-        {greyStars.map((star, index) => (
-          <span key={index}>{star}</span>
-        ))}
-      </Flex> */}
     </Flex>
   );
 };
