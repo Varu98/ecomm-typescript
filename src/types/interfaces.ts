@@ -20,11 +20,19 @@ export interface Product {
   created_at: string;
   updated_at: string;
 }
+
+export interface Paginate {
+  page: number;
+  count: number;
+  pageCount: number;
+}
 export interface ProductContextProps {
   products: Product[];
   loading: boolean;
   index: number;
+  paginate: Paginate;
   setIndex: Dispatch<SetStateAction<number>>;
+  setPaginate: Dispatch<SetStateAction<Paginate>>;
 }
 
 export interface ProductProviderProps {
