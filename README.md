@@ -2,6 +2,10 @@
 
 This is a product listing application built with React using TypeScript. It allows users to browse and view product listings with pagination support. The application fetches product data from a mock API and displays them in a grid layout. It also includes features such as product ratings and a simple pagination component.
 
+
+![Uploading mumzworld_assignment.gif…]()
+
+
 ## Folder Structure
 
 The project follows the following folder structure:
