@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+# Mumzworld Product Listing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a product listing application built with React using TypeScript. It allows users to browse and view product listings with pagination support. The application fetches product data from a mock API and displays them in a grid layout. It also includes features such as product ratings and a simple pagination component.
 
-## Available Scripts
+## Folder Structure
 
-In the project directory, you can run:
+The project follows the following folder structure:
 
-### `npm start`
+```
+├── src/
+│   ├── components/
+│   │   ├── Card.tsx
+│   │   ├── Paginate.tsx
+│   │   ├── ProductListing.tsx
+│   │   ├── Rating.tsx
+│   ├── contexts/
+│   │   └── ProductListingContext.tsx
+│   ├── services/
+│   │   └── fetchProducts.ts
+│   ├── styles/
+│   │   └── styles.css
+│   ├── types/
+│   │   └── interfaces.ts
+│   ├── App.tsx
+│   ├── App.test.js
+│   ├── index.tsx
+│   ├── index.css
+├── package.json
+└── README.md
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The application uses the following technologies and libraries:
 
-### `npm test`
+- React: A JavaScript library for building user interfaces.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- Chakra UI: A flexible and accessible component library for building React applications.
+- React Icons: A collection of popular icons as React components.
+- MSW (Mock Service Worker): A library for mocking HTTP requests in development and testing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tests
 
-### `npm run build`
+The project includes unit tests for some of the components and functionality. The tests are written using the Jest testing framework and React Testing Library. The main test file, `App.test.js`, includes two test cases:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Renders product cards**: This test case ensures that the product cards are rendered correctly. It checks if the correct number of product cards are displayed on the page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Fetches products and updates pagination**: This test case verifies the pagination functionality. It simulates fetching products from the mock API and checks if the pagination is correctly updated when navigating to the next page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the tests, use the following command:
 
-### `npm run eject`
+```
+npm test
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the application locally, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone the repository:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ```bash
+   git clone <repository-url>
+   ```
 
-## Learn More
+2. Install the dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+4. Open the application in your browser:
+
+   ```
+   http://localhost:3000
+   ```
+
+The application should now be running locally on your machine.
+
+## API Integration
+
+The application fetches product data from a mock API. The API endpoint used is `https://ecom-mock.mumzworld.tech/products`. It supports pagination using query parameters `page` and `limit`. The total number of pages is returned in the response as `pageCount`.
+
+The `fetchProducts` function in the `services/fetchProducts.ts` file handles the API integration and data fetching.
+
+## Contributing
+
+Contributions to the Mumzworld Product Listing application are welcome! If you find any issues or have ideas for improvements, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
