@@ -28,7 +28,7 @@ const Rating: React.FC<StarProps> = ({ rating }) => {
 
   useEffect(() => {
     renderStars();
-  }, []);
+  }, [rating]);
 
   return (
     <Flex>
