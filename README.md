@@ -6,6 +6,7 @@ This is a product listing application built with React using TypeScript. It allo
 ![Uploading mumzworld_assignment.gif…]()
 
 
+
 ## Folder Structure
 
 The project follows the following folder structure:
