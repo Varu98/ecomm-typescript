@@ -2,7 +2,7 @@
 
 This is a product listing application built with React using TypeScript. It allows users to browse and view product listings with pagination support. The application fetches product data from a mock API and displays them in a grid layout. It also includes features such as product ratings and a simple pagination component.
 
-# Demo Link : https://ecomm-typescript-weld.vercel.app/
+### Demo Link : https://ecomm-typescript-weld.vercel.app/
 
 ![demo](https://github.com/Varu98/ecomm-typescript/blob/development/public/mumzworld_assignment.gif)
 
